@@ -1,5 +1,3 @@
-using System;
-
 namespace blazoract.Shared
 {
     public class Cell

@@ -12,6 +12,7 @@ namespace blazoract.Shared
             Created = DateTime.Now;
             Updated = Created;
         }
+
         public string Title { get; set; }
 
         public string NotebookId { get; set; }

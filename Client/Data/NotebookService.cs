@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
 using blazoract.Shared;
 using Blazored.LocalStorage;
-using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace blazoract.Client.Data
 {
@@ -31,7 +31,6 @@ namespace blazoract.Client.Data
 
         public Task<Notebook> GetById(string id)
         {
-
             if (!_inMemoryNotebooks.TryGetValue(id, out var result))
             {
                 result = _storage.GetItemAsync<Notebook>(id).AsTask();

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace blazoract.Shared
+﻿namespace blazoract.Shared
 {
     public class ExecuteRequest
     {

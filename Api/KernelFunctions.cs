@@ -1,27 +1,26 @@
-using System;
-using System.IO;
-using System.Linq;
+using blazoract.Shared;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Extensions.Logging;
-using Microsoft.DotNet.Interactive.CSharp;
+using Microsoft.CodeAnalysis.Text;
 using Microsoft.DotNet.Interactive;
-using Microsoft.DotNet.Interactive.Events;
 using Microsoft.DotNet.Interactive.Commands;
-using blazoract.Shared;
+using Microsoft.DotNet.Interactive.Events;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Net.Http;
-using Newtonsoft.Json;
-using Microsoft.CodeAnalysis.Text;
 
 namespace blazoract.Api
 {
     public class KernelFunction
     {
         private KernelStore _kernels;
+
         public KernelFunction(KernelStore kernels)
         {
             _kernels = kernels;
@@ -55,6 +54,7 @@ namespace blazoract.Api
                             // If it's not serializable, the client will just use OutputToString
                         }
                         break;
+
                     case CommandFailed commandFailed:
                         result.OutputType = "error";
                         result.OutputJson = null;
